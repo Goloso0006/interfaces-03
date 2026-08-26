@@ -10,6 +10,9 @@ export default function Home() {
   const seatBaseClass =
     "grid h-7.5 w-7.5 place-items-center rounded-[8px] text-[13px] font-semibold sm:h-8.5 sm:w-8.5 sm:rounded-[9px] sm:text-[15px]";
 
+  const desktopSeatBaseClass =
+    "grid h-10 w-10 place-items-center rounded-[10px] text-base font-semibold";
+
   const businessSeats = [
     {
       row: 1,
@@ -175,7 +178,8 @@ export default function Home() {
   ] as const;
 
   return (
-    <main className="mx-auto flex min-h-screen w-full max-w-115 flex-col gap-4 bg-linear-to-b from-white to-[#fef7f4] px-4 py-4 sm:px-5 sm:py-5">
+    <main className="min-h-screen bg-[#fdf2ef] p-3 lg:p-0">
+      <div className="mx-auto flex min-h-screen w-full max-w-115 flex-col gap-4 bg-linear-to-b from-white to-[#fef7f4] px-4 py-4 sm:px-5 sm:py-5 lg:hidden">
       <section className="flex items-center justify-between">
         <button
           className="grid size-10 place-items-center rounded-xl bg-[#f3f4f9] text-[#b9bfca]"
@@ -368,6 +372,254 @@ export default function Home() {
           Select a seat
         </button>
       </section>
+      </div>
+
+      <div className="mx-auto hidden min-h-screen w-full max-w-365 grid-cols-[19rem_minmax(42rem,1fr)_23rem] overflow-hidden rounded-[36px] bg-white shadow-[0_22px_70px_-40px_rgba(58,70,93,0.5)] lg:grid">
+        <aside className="flex flex-col gap-7 rounded-r-[30px] bg-linear-to-b from-[#edf2fb] to-[#dfe8f8] p-6">
+          <div className="flex items-center gap-3 text-[#8d98ad]">
+            <button
+              className="grid size-9 place-items-center rounded-xl bg-white/75 text-[#aeb7c8]"
+              aria-label="Back"
+            >
+              <svg
+                aria-hidden
+                viewBox="0 0 24 24"
+                className="size-4"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.2"
+              >
+                <path d="M15 18l-6-6 6-6" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </button>
+            <p className="text-[30px] font-semibold">Flight details</p>
+          </div>
+
+          <div className="rounded-[26px] bg-white p-6 shadow-[0_12px_24px_-20px_rgba(20,38,67,0.8)]">
+            <div className="mb-5 flex items-center gap-4 text-foreground">
+              <span className="grid size-10 place-items-center rounded-[12px] bg-[#fdf2ef] text-[#ef7058]">
+                <span className="size-3 rounded-[2px] bg-[#ef7058]" />
+              </span>
+              <h2 className="text-[40px] leading-none font-bold">Business Class</h2>
+            </div>
+            <div className="mb-4 grid grid-cols-2 gap-6 text-[#9ea8bd]">
+              <div>
+                <p className="text-[26px] font-semibold">Seat</p>
+                <p className="mt-2 text-[44px] leading-none font-bold text-foreground">-</p>
+              </div>
+              <div>
+                <p className="text-[26px] font-semibold">Seat</p>
+                <p className="mt-2 text-[44px] leading-none font-bold text-foreground">-</p>
+              </div>
+            </div>
+            <p className="text-[35px] text-[#8f9bb2]">
+              Price: <span className="font-semibold text-[#ef7058]">$0</span>
+            </p>
+          </div>
+
+          <div className="space-y-3 text-foreground">
+            <div>
+              <p className="text-[56px] leading-none font-extrabold">MUC</p>
+              <p className="mt-2 text-[40px] text-[#8a97af]">Munich</p>
+            </div>
+
+            <div className="relative pt-6 pb-4 text-[#ef7058]">
+              <svg viewBox="0 0 220 74" className="h-[74px] w-full" fill="none">
+                <path
+                  d="M8 58C58 10 146 10 210 58"
+                  stroke="currentColor"
+                  strokeOpacity="0.45"
+                  strokeWidth="2.5"
+                  strokeDasharray="8 9"
+                />
+                <circle cx="8" cy="58" r="4" fill="currentColor" />
+                <circle cx="210" cy="58" r="4" fill="currentColor" />
+                <path d="M194 24l9 10 6-4-4 7 5 7-8-5-9 8 5-10-6-8z" fill="currentColor" />
+              </svg>
+              <span className="absolute right-0 top-11 text-[22px] text-[#8f9bb2]">2h 10m</span>
+            </div>
+
+            <div>
+              <p className="text-[56px] leading-none font-extrabold">LXR</p>
+              <p className="mt-2 text-[40px] text-[#8a97af]">London</p>
+            </div>
+          </div>
+
+          <div className="mt-auto grid grid-cols-2 gap-3">
+            <div className="rounded-3xl bg-white px-5 py-4">
+              <p className="text-[20px] font-semibold text-[#adb7c9]">DATE</p>
+              <p className="text-[36px] leading-none font-bold text-foreground">Dec 1, 2026</p>
+            </div>
+            <div className="rounded-3xl bg-white px-5 py-4">
+              <p className="text-[20px] font-semibold text-[#adb7c9]">FLIGHT</p>
+              <p className="text-[36px] leading-none font-bold text-foreground">No 25</p>
+            </div>
+          </div>
+        </aside>
+
+        <section className="flex flex-col border-x border-[#eef0f6] px-8 pt-7 pb-4">
+          <header className="mb-4 flex flex-col items-center gap-4">
+            <div className="flex items-center gap-5 text-[#b8bfce]">
+              <p className="text-[32px] font-semibold">0/2</p>
+              <span className="h-2 w-64 rounded-full bg-[#f1ece8]" />
+            </div>
+
+            <div className="flex items-center gap-7 text-[29px] font-medium text-[#7f899f]">
+              <span className="inline-flex items-center gap-2">
+                <span className="h-3.5 w-3.5 rounded-[5px] border-2 border-[#ef7058] bg-white" aria-hidden />
+                Available
+              </span>
+              <span className="inline-flex items-center gap-2">
+                <span className="h-3.5 w-3.5 rounded-[5px] border-2 border-[#ef7058] bg-[#ef7058]" aria-hidden />
+                Selected
+              </span>
+              <span className="inline-flex items-center gap-2">
+                <span className="h-3.5 w-3.5 rounded-[5px] border-2 border-[#e5e7ef] bg-[#e5e7ef]" aria-hidden />
+                Taken
+              </span>
+            </div>
+          </header>
+
+          <div className="relative flex-1 overflow-hidden rounded-[42px] border border-[#ecf0f7] bg-linear-to-b from-[#fefefe] to-[#f2f5fb] px-10 pt-16">
+            <div className="absolute right-2 top-10 h-2/5 w-1 rounded-full bg-[#ef7058]/40" />
+
+            <div className="space-y-8">
+              <article>
+                <h2 className="mb-4 text-center text-[40px] font-bold text-foreground">Business Class</h2>
+                <div className="grid gap-3">
+                  {businessSeats.map((row) => (
+                    <div className="grid grid-cols-[auto_34px_auto] items-center justify-center gap-x-5" key={`desktop-business-${row.row}`}>
+                      <div className="grid auto-cols-max grid-flow-col gap-3">
+                        {row.left.map((seat) => (
+                          <button
+                            key={`desktop-business-${row.row}-${seat.code}`}
+                            className={`${desktopSeatBaseClass} ${seatStyles[seat.status]}`}
+                            aria-label={`Row ${row.row} Seat ${seat.code}`}
+                          >
+                            {seat.code}
+                          </button>
+                        ))}
+                      </div>
+
+                      <span className="text-center text-[31px] font-medium text-[#b9bfca]">{row.row}</span>
+
+                      <div className="grid auto-cols-max grid-flow-col gap-3">
+                        {row.right.map((seat) => (
+                          <button
+                            key={`desktop-business-${row.row}-${seat.code}`}
+                            className={`${desktopSeatBaseClass} ${seatStyles[seat.status]}`}
+                            aria-label={`Row ${row.row} Seat ${seat.code}`}
+                          >
+                            {seat.code}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </article>
+
+              <article>
+                <h2 className="mb-4 text-center text-[40px] font-bold text-foreground">First Class</h2>
+                <div className="grid gap-3">
+                  {firstClassSeats.map((row) => (
+                    <div className="grid grid-cols-[auto_34px_auto] items-center justify-center gap-x-5" key={`desktop-first-${row.row}`}>
+                      <div className="grid auto-cols-max grid-flow-col gap-3">
+                        {row.left.map((seat) => (
+                          <button
+                            key={`desktop-first-${row.row}-${seat.code}`}
+                            className={`${desktopSeatBaseClass} ${seatStyles[seat.status]}`}
+                            aria-label={`Row ${row.row} Seat ${seat.code}`}
+                          >
+                            {seat.code}
+                          </button>
+                        ))}
+                      </div>
+
+                      <span className="text-center text-[31px] font-medium text-[#b9bfca]">{row.row}</span>
+
+                      <div className="grid auto-cols-max grid-flow-col gap-3">
+                        {row.right.map((seat) => (
+                          <button
+                            key={`desktop-first-${row.row}-${seat.code}`}
+                            className={`${desktopSeatBaseClass} ${seatStyles[seat.status]}`}
+                            aria-label={`Row ${row.row} Seat ${seat.code}`}
+                          >
+                            {seat.code}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </article>
+
+              <article>
+                <h2 className="mb-4 text-center text-[40px] font-bold text-foreground">Economy Class</h2>
+                <div className="grid gap-3 pb-8">
+                  {economySeats.map((row) => (
+                    <div className="grid grid-cols-[auto_34px_auto] items-center justify-center gap-x-5" key={`desktop-economy-${row.row}`}>
+                      <div className="grid auto-cols-max grid-flow-col gap-3">
+                        {row.left.map((seat) => (
+                          <button
+                            key={`desktop-economy-${row.row}-${seat.code}`}
+                            className={`${desktopSeatBaseClass} ${seatStyles[seat.status]}`}
+                            aria-label={`Row ${row.row} Seat ${seat.code}`}
+                          >
+                            {seat.code}
+                          </button>
+                        ))}
+                      </div>
+
+                      <span className="text-center text-[31px] font-medium text-[#b9bfca]">{row.row}</span>
+
+                      <div className="grid auto-cols-max grid-flow-col gap-3">
+                        {row.right.map((seat) => (
+                          <button
+                            key={`desktop-economy-${row.row}-${seat.code}`}
+                            className={`${desktopSeatBaseClass} ${seatStyles[seat.status]}`}
+                            aria-label={`Row ${row.row} Seat ${seat.code}`}
+                          >
+                            {seat.code}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <aside className="flex flex-col bg-linear-to-b from-white to-[#fef9f7] px-8 py-8">
+          <h2 className="mb-5 text-[42px] font-bold text-foreground">Your selection</h2>
+
+          <div className="grid h-28 place-items-center rounded-[24px] border-2 border-dashed border-[#f6c6bd] text-center text-[35px] leading-tight text-[#b7b3b2]">
+            <p>Pick up to 2 seats from the cabin map</p>
+          </div>
+
+          <div className="mt-auto space-y-3 text-[37px] text-[#8896ad]">
+            <div className="flex items-center justify-between">
+              <span>Seats</span>
+              <span className="font-semibold text-foreground">None</span>
+            </div>
+            <div className="flex items-center justify-between">
+              <span>Taxes &amp; fees</span>
+              <span className="font-semibold text-foreground">$0</span>
+            </div>
+            <div className="my-2 h-px bg-[#ebeaf0]" />
+            <div className="flex items-end justify-between">
+              <span>Total</span>
+              <span className="text-[66px] leading-none font-extrabold text-foreground">$0</span>
+            </div>
+          </div>
+
+          <button className="mt-4 h-15.5 rounded-full bg-[#efe6e1] text-[40px] font-semibold text-[#b0a69f]">
+            Select a seat
+          </button>
+        </aside>
+      </div>
     </main>
   );
 }
